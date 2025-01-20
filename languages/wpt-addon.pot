@@ -1,0 +1,367 @@
+# Copyright (C) 2023 Md. Al-Amin Islam
+# This file is distributed under the same license as the Wpt Addon package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wpt Addon 1.0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpt-addon\n"
+"POT-Creation-Date: 2023-06-13 15:21:17+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2023-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
+
+#: widgets/wpt-services-slider.php:11
+msgid "Wpt Services Slider"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:32 widgets/wpt-services-slider.php:96
+#: widgets/wpt-testimonial-slider.php:32 widgets/wpt-testimonial-slider.php:76
+msgid "Content"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:41 widgets/wpt-services-slider.php:86
+#: widgets/wpt-services-slider.php:298 widgets/wpt-testimonial-slider.php:455
+msgid "Title"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:43 widgets/wpt-services-slider.php:55
+msgid "Default title"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:44 widgets/wpt-services-slider.php:56
+msgid "Type your title here"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:53 widgets/wpt-services-slider.php:357
+msgid "Headline"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:65
+msgid "Services"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:75 widgets/wpt-testimonial-slider.php:43
+msgid "Choose Image"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:88
+msgid "List Title"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:98 widgets/wpt-testimonial-slider.php:78
+msgid "List Content"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:107
+msgid "Wpt Services List"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:112 widgets/wpt-testimonial-slider.php:92
+msgid "Title #1"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:113 widgets/wpt-services-slider.php:117
+#: widgets/wpt-testimonial-slider.php:93 widgets/wpt-testimonial-slider.php:97
+msgid "Item content. Click the edit button to change this text."
+msgstr ""
+
+#: widgets/wpt-services-slider.php:116 widgets/wpt-testimonial-slider.php:96
+msgid "Title #2"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:129 widgets/wpt-testimonial-slider.php:109
+msgid "Settings"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:137 widgets/wpt-testimonial-slider.php:117
+msgid "Loop"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:139 widgets/wpt-services-slider.php:152
+#: widgets/wpt-services-slider.php:165 widgets/wpt-testimonial-slider.php:119
+#: widgets/wpt-testimonial-slider.php:156
+#: widgets/wpt-testimonial-slider.php:169
+msgid "Show"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:140 widgets/wpt-services-slider.php:153
+#: widgets/wpt-services-slider.php:166 widgets/wpt-testimonial-slider.php:120
+#: widgets/wpt-testimonial-slider.php:157
+#: widgets/wpt-testimonial-slider.php:170
+msgid "Hide"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:150 widgets/wpt-testimonial-slider.php:154
+msgid "Dots"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:163 widgets/wpt-testimonial-slider.php:167
+msgid "Navs"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:176 widgets/wpt-services-slider.php:329
+#: widgets/wpt-services-slider.php:388 widgets/wpt-services-slider.php:576
+#: widgets/wpt-services-slider.php:635 widgets/wpt-services-slider.php:1003
+#: widgets/wpt-testimonial-slider.php:180
+#: widgets/wpt-testimonial-slider.php:368
+#: widgets/wpt-testimonial-slider.php:427
+#: widgets/wpt-testimonial-slider.php:795
+msgid "Margin"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:180 widgets/wpt-testimonial-slider.php:184
+msgid "Enter the margin between to sliders"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:193
+msgid "Content Body Style"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:202 widgets/wpt-testimonial-slider.php:206
+msgid "Wrapper"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:222 widgets/wpt-services-slider.php:253
+#: widgets/wpt-services-slider.php:275 widgets/wpt-services-slider.php:446
+#: widgets/wpt-services-slider.php:563 widgets/wpt-testimonial-slider.php:216
+#: widgets/wpt-testimonial-slider.php:229
+#: widgets/wpt-testimonial-slider.php:262
+msgid "Padding"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:244
+msgid "Content Body Padding"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:266
+msgid "Services Body Padding"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:289
+msgid "Content Style"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:317 widgets/wpt-services-slider.php:614
+#: widgets/wpt-services-slider.php:673 widgets/wpt-testimonial-slider.php:465
+msgid "Title Color"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:376
+msgid "Heading Color"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:417
+msgid "Services Style"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:426
+msgid "Item Body"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:468 widgets/wpt-testimonial-slider.php:285
+msgid "Image"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:488 widgets/wpt-services-slider.php:907
+#: widgets/wpt-testimonial-slider.php:699
+msgid "Width"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:516 widgets/wpt-services-slider.php:945
+#: widgets/wpt-testimonial-slider.php:296
+#: widgets/wpt-testimonial-slider.php:737
+msgid "Height"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:544 widgets/wpt-services-slider.php:973
+#: widgets/wpt-testimonial-slider.php:324
+#: widgets/wpt-testimonial-slider.php:765
+msgid "Border Radius"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:604
+msgid "Title Style"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:663
+msgid "Description Style"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:695 widgets/wpt-testimonial-slider.php:487
+msgid "Navigation Style"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:704 widgets/wpt-testimonial-slider.php:496
+msgid "Previous Icon"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:717 widgets/wpt-services-slider.php:795
+#: widgets/wpt-testimonial-slider.php:509
+#: widgets/wpt-testimonial-slider.php:587
+msgid "Normal"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:725 widgets/wpt-services-slider.php:757
+#: widgets/wpt-services-slider.php:803 widgets/wpt-services-slider.php:834
+#: widgets/wpt-testimonial-slider.php:517
+#: widgets/wpt-testimonial-slider.php:549
+#: widgets/wpt-testimonial-slider.php:595
+#: widgets/wpt-testimonial-slider.php:626
+msgid "Icon Color"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:749 widgets/wpt-services-slider.php:826
+#: widgets/wpt-testimonial-slider.php:541
+#: widgets/wpt-testimonial-slider.php:618
+msgid "Hover"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:782 widgets/wpt-testimonial-slider.php:574
+msgid "Next Icon"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:859 widgets/wpt-testimonial-slider.php:651
+#: widgets/wpt-testimonial-slider.php:661
+msgid "Icon Size"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:869
+msgid "Size"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:897 widgets/wpt-testimonial-slider.php:689
+msgid "Icon Width"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:935 widgets/wpt-testimonial-slider.php:727
+msgid "Icon Height"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:993 widgets/wpt-testimonial-slider.php:785
+msgid "Space Between"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:1031 widgets/wpt-testimonial-slider.php:823
+msgid "Horizontal Align"
+msgstr ""
+
+#: widgets/wpt-services-slider.php:1059 widgets/wpt-testimonial-slider.php:851
+msgid "Vertical Align"
+msgstr ""
+
+#: widgets/wpt-testimonial-slider.php:11
+msgid "Wpt Testimonial Slider"
+msgstr ""
+
+#: widgets/wpt-testimonial-slider.php:54
+msgid "Client Name"
+msgstr ""
+
+#: widgets/wpt-testimonial-slider.php:56
+msgid "Jhon Doe"
+msgstr ""
+
+#: widgets/wpt-testimonial-slider.php:65
+msgid "Client Title"
+msgstr ""
+
+#: widgets/wpt-testimonial-slider.php:67
+msgid "Manager"
+msgstr ""
+
+#: widgets/wpt-testimonial-slider.php:87
+msgid "Wpt Testimonial List"
+msgstr ""
+
+#: widgets/wpt-testimonial-slider.php:129
+msgid "Autoplay"
+msgstr ""
+
+#: widgets/wpt-testimonial-slider.php:131
+msgid "On"
+msgstr ""
+
+#: widgets/wpt-testimonial-slider.php:132
+msgid "Off"
+msgstr ""
+
+#: widgets/wpt-testimonial-slider.php:141
+msgid "Autoplay Hover Pause"
+msgstr ""
+
+#: widgets/wpt-testimonial-slider.php:143
+msgid "True"
+msgstr ""
+
+#: widgets/wpt-testimonial-slider.php:144
+msgid "False"
+msgstr ""
+
+#: widgets/wpt-testimonial-slider.php:197
+msgid "Content Wrapper Style"
+msgstr ""
+
+#: widgets/wpt-testimonial-slider.php:242
+msgid "Content Wrapper"
+msgstr ""
+
+#: widgets/wpt-testimonial-slider.php:276
+msgid "Testimonials Style"
+msgstr ""
+
+#: widgets/wpt-testimonial-slider.php:337
+msgid "Description"
+msgstr ""
+
+#: widgets/wpt-testimonial-slider.php:347
+msgid "Description Color"
+msgstr ""
+
+#: widgets/wpt-testimonial-slider.php:396
+msgid "Client"
+msgstr ""
+
+#: widgets/wpt-testimonial-slider.php:406
+msgid "Client Color"
+msgstr ""
+
+#: wpt-addon.php:163
+msgid "\"%1$s\" requires \"%2$s\" to be installed and activated"
+msgstr ""
+
+#: wpt-addon.php:164 wpt-addon.php:180 wpt-addon.php:197
+msgid "WPT Addon"
+msgstr ""
+
+#: wpt-addon.php:165 wpt-addon.php:181
+msgid "Elementor"
+msgstr ""
+
+#: wpt-addon.php:179 wpt-addon.php:196
+msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater"
+msgstr ""
+
+#: wpt-addon.php:198
+msgid "PHP"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Wpt Addon"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://w-prothemes.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"W-Pro Themes addon for elementor. This plugin develop by MD AL AMIN ISLAM. "
+"You can add extra functionality using this plugin."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Md. Al-Amin Islam"
+msgstr ""
