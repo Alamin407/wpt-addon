@@ -308,7 +308,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 					'size' => 500,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .swiper.wpt-coverflow .swiper-slide .wpt-img' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .swiper.wpt-coverflow .swiper-slide .wpt-img' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
