@@ -27,7 +27,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 
     public function register_controls() {
         $this->start_controls_section(
-            'wpt_cat_content_section',
+            'wpt_coverflow_content_section',
             [
                 'label' => esc_html__( 'CoverFlow Items', 'wpt-addon' ),
                 'tab' => Controls_Manager::TAB_CONTENT,
@@ -405,7 +405,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'wpt_coverflow_content_padding',
 			[
 				'label' => esc_html__( 'Padding', 'textdomain' ),
@@ -453,7 +453,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'wpt_coverflow_title_margin',
 			[
 				'label' => esc_html__( 'Specing', 'textdomain' ),
@@ -501,7 +501,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'wpt_coverflow_text_margin',
 			[
 				'label' => esc_html__( 'Specing', 'textdomain' ),
@@ -532,7 +532,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
         );
 
 		// Width
-		$this->add_control(
+		$this->add_responsive_control(
 			'wpt_coverflow_nav_width',
 			[
 				'label' => esc_html__( 'Width', 'textdomain' ),
@@ -560,7 +560,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		);
 
 		// Width
-		$this->add_control(
+		$this->add_responsive_control(
 			'wpt_coverflow_nav_height',
 			[
 				'label' => esc_html__( 'Height', 'textdomain' ),
@@ -582,14 +582,14 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 					'size' => 48,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .swiper.wpt-coverflow .wp-slide-nav .swiper-button-next, .swiper.wpt-coverflow .wp-slide-nav .swiper-button-prev' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .swiper.wpt-coverflow .wp-slide-nav .swiper-button-next, .swiper.wpt-coverflow .wp-slide-nav .swiper-button-prev' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
 
 
 		// Icon Size
-		$this->add_control(
+		$this->add_responsive_control(
 			'wpt_coverflow_nav_icon_size',
 			[
 				'label' => esc_html__( 'Icon Size', 'textdomain' ),
@@ -675,7 +675,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 				'label' => esc_html__( 'Icon Color', 'textdomain' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .swiper.wpt-coverflow .wp-slide-nav .swiper-button-next svg path, .swiper.wpt-coverflow .wp-slide-nav .swiper-button-prev svg path' => 'fill: {{VALUE}}',
+					'{{WRAPPER}} .swiper.wpt-coverflow .wp-slide-nav .swiper-button-next:hover svg path, .swiper.wpt-coverflow .wp-slide-nav .swiper-button-prev:hover svg path' => 'fill: {{VALUE}}',
 				],
 			]
 		);
@@ -686,7 +686,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 			[
 				'name' => 'wpt_coverflow_nav_hover_background',
 				'types' => [ 'classic', 'gradient', 'video' ],
-				'selector' => '{{WRAPPER}} .swiper.wpt-coverflow .wp-slide-nav .swiper-button-next, .swiper.wpt-coverflow .wp-slide-nav .swiper-button-prev',
+				'selector' => '{{WRAPPER}} .swiper.wpt-coverflow .wp-slide-nav .swiper-button-next:hover, .swiper.wpt-coverflow .wp-slide-nav .swiper-button-prev:hover',
 			]
 		);
 
@@ -697,7 +697,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 				'label' => esc_html__( 'Border Color', 'textdomain' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .swiper.wpt-coverflow .wp-slide-nav .swiper-button-next, .swiper.wpt-coverflow .wp-slide-nav .swiper-button-prev' => 'border-color: {{VALUE}}',
+					'{{WRAPPER}} .swiper.wpt-coverflow .wp-slide-nav .swiper-button-next:hover, .swiper.wpt-coverflow .wp-slide-nav .swiper-button-prev:hover' => 'border-color: {{VALUE}}',
 				],
 			]
 		);

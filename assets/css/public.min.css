@@ -32,18 +32,125 @@
 .swiper.wpt-coverflow .swiper-slide .content p {
   color: #fff;
 }
-
-.swiper.wpt-coverflow .wp-slide-nav .swiper-button-next::after {
-  display: none;
+.swiper.wpt-coverflow .wp-slide-nav .swiper-button-next,
+.swiper.wpt-coverflow .wp-slide-nav .swiper-button-prev {
+  transition: 0.3s ease-in-out;
 }
+.swiper.wpt-coverflow .wp-slide-nav .swiper-button-next svg path,
+.swiper.wpt-coverflow .wp-slide-nav .swiper-button-prev svg path {
+  transition: 0.3s ease-in-out;
+}
+
+.swiper.wpt-coverflow .wp-slide-nav .swiper-button-next::after,
 .swiper.wpt-coverflow .wp-slide-nav .swiper-button-prev::after {
   display: none;
 }
-
 .swiper.wpt-coverflow .wp-slide-nav {
   position: absolute;
   width: 130px;
   bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.wpt-accordion {
+  width: 100%;
+  background: transparent;
+}
+
+.wpt-accordion-item {
+  border-bottom: 1px solid #8be2ff;
+}
+
+.wpt-accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 16px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.wpt-accordion-header.active {
+  padding-bottom: 0;
+}
+.wpt-accordion-header .wpt-accr-iocn-list {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.wpt-accordion-header .wpt-accr-iocn-list .wpt-accr-icon svg {
+  width: 48px;
+  height: 48px;
+}
+.wpt-accordion-header h3 {
+  margin: 0;
+  color: #09284f;
+  font-family: "Mulish", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 31.2px;
+  letter-spacing: 0.12px;
+}
+.wpt-accordion-content {
+  display: none;
+  padding: 0 16px 24px 80px;
+  background-color: #fff;
+  width: 100%;
+}
+.wpt-accordion-content .wpt-content-wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 72px;
+  flex-wrap: wrap;
+}
+.wpt-accordion-content .wpt-accr-desc {
+  width: calc(50% - 72px);
+}
+.wpt-accordion-content .wpt-accr-img {
+  width: calc(50% - 72px);
+  position: relative;
+}
+.wpt-accordion-content .wpt-accr-img img {
+  transform: rotate(-8deg);
+  position: absolute;
+  top: -80px;
+  width: 350px;
+}
+
+.wpt-accordion-content p {
+  margin: 0;
+  color: #4a4c56;
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25.6px;
+  letter-spacing: 0.08px;
+}
+.wpt-accordion-toggle {
+  font-size: 20px;
+  color: #333;
+}
+.show-content {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .wpt-accordion-content .wpt-accr-img img {
+    right: 55px;
+  }
+}
+@media (max-width: 576px) {
+  .wpt-accordion-content .wpt-accr-img img {
+    right: 20px;
+    width: 200px;
+  }
+  .wpt-accordion-content .wpt-accr-desc {
+    width: 100%;
+  }
+  .wpt-accordion-content .wpt-accr-img {
+    width: 100%;
+  }
 }

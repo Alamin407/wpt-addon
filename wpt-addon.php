@@ -118,6 +118,7 @@ final class Wpt_Addon {
     */
     public function init_widgets() {
         require_once WPT_PLUGIN_PATH . '/widgets/wpt-coverflow-slider.php';
+        require_once WPT_PLUGIN_PATH . '/widgets/wpt-accordion.php';
     }
 
     /**
