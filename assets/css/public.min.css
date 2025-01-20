@@ -71,9 +71,6 @@
   cursor: pointer;
   transition: background-color 0.3s;
 }
-.wpt-accordion-header.active {
-  padding-bottom: 0;
-}
 .wpt-accordion-header .wpt-accr-iocn-list {
   display: flex;
   align-items: center;
@@ -98,6 +95,7 @@
   padding: 0 16px 24px 80px;
   background-color: transparent;
   width: 100%;
+  margin-top: -24px;
 }
 .wpt-accordion-content .wpt-content-wrap {
   display: flex;
