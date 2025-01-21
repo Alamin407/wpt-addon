@@ -39,7 +39,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
         $repeater->add_control(
 			'wpt_coverflow_image',
 			[
-				'label' => esc_html__( 'Choose Image', 'textdomain' ),
+				'label' => esc_html__( 'Choose Image', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::MEDIA,
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -50,9 +50,9 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
         $repeater->add_control(
             'wpt_coverflow_title',
 			[
-				'label' => esc_html__( 'Title', 'textdomain' ),
+				'label' => esc_html__( 'Title', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
-				'default' => esc_html__( 'List Title' , 'textdomain' ),
+				'default' => esc_html__( 'List Title' , 'wpt-addon' ),
 				'label_block' => true,
 			]
         );
@@ -60,9 +60,9 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
         $repeater->add_control(
 			'wpt_coverflow_content',
 			[
-				'label' => esc_html__( 'Content', 'textdomain' ),
+				'label' => esc_html__( 'Content', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::WYSIWYG,
-				'default' => esc_html__( 'List Content' , 'textdomain' ),
+				'default' => esc_html__( 'List Content' , 'wpt-addon' ),
 				'show_label' => false,
 			]
 		);
@@ -70,17 +70,17 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
         $this->add_control(
 			'wpt_coverflow_list',
 			[
-				'label' => esc_html__( 'Coverflow Item', 'textdomain' ),
+				'label' => esc_html__( 'Coverflow Item', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'wpt_coverflow_title' => esc_html__( 'Title #1', 'textdomain' ),
-						'wpt_coverflow_content' => esc_html__( 'Item content. Click the edit button to change this text.', 'textdomain' ),
+						'wpt_coverflow_title' => esc_html__( 'Title #1', 'wpt-addon' ),
+						'wpt_coverflow_content' => esc_html__( 'Item content. Click the edit button to change this text.', 'wpt-addon' ),
 					],
 					[
-						'wpt_coverflow_title' => esc_html__( 'Title #2', 'textdomain' ),
-						'wpt_coverflow_content' => esc_html__( 'Item content. Click the edit button to change this text.', 'textdomain' ),
+						'wpt_coverflow_title' => esc_html__( 'Title #2', 'wpt-addon' ),
+						'wpt_coverflow_content' => esc_html__( 'Item content. Click the edit button to change this text.', 'wpt-addon' ),
 					],
 				],
 				'title_field' => '{{{ wpt_coverflow_title }}}',
@@ -101,7 +101,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		$this->add_control(
 			'wpt_coverflow_autoplay',
 			[
-				'label' => esc_html__( 'Autoplay Speed', 'textdomain' ),
+				'label' => esc_html__( 'Autoplay Speed', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'default' => '3000',
 			]
@@ -111,10 +111,10 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		$this->add_control(
 			'wpt_coverflow_loop',
 			[
-				'label' => esc_html__( 'Loop', 'textdomain' ),
+				'label' => esc_html__( 'Loop', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'On', 'textdomain' ),
-				'label_off' => esc_html__( 'Off', 'textdomain' ),
+				'label_on' => esc_html__( 'On', 'wpt-addon' ),
+				'label_off' => esc_html__( 'Off', 'wpt-addon' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
@@ -124,10 +124,10 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		$this->add_control(
 			'wpt_coverflow_nav',
 			[
-				'label' => esc_html__( 'Navigation', 'textdomain' ),
+				'label' => esc_html__( 'Navigation', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'On', 'textdomain' ),
-				'label_off' => esc_html__( 'Off', 'textdomain' ),
+				'label_on' => esc_html__( 'On', 'wpt-addon' ),
+				'label_off' => esc_html__( 'Off', 'wpt-addon' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]
@@ -150,7 +150,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		$this->add_control(
 			'wpt_coverflow_icon_next',
 			[
-				'label' => esc_html__( 'Next Icon', 'textdomain' ),
+				'label' => esc_html__( 'Next Icon', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fas fa-arrow-right',
@@ -175,7 +175,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		$this->add_control(
 			'wpt_coverflow_icon_prev',
 			[
-				'label' => esc_html__( 'Prev Icon', 'textdomain' ),
+				'label' => esc_html__( 'Prev Icon', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fas fa-arrow-left',
@@ -214,7 +214,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
         $this->add_responsive_control(
 			'wpt_coverflow_wrapper_padding',
 			[
-				'label' => esc_html__( 'Padding', 'textdomain' ),
+				'label' => esc_html__( 'Padding', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'default' => [
@@ -244,7 +244,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
         $this->add_control(
 			'wpt_coverflow_item_style',
 			[
-				'label' => esc_html__( 'Items Style', 'textdomain' ),
+				'label' => esc_html__( 'Items Style', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -253,7 +253,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
         $this->add_responsive_control(
 			'wpt_coverflow_item_width',
 			[
-				'label' => esc_html__( 'Width', 'textdomain' ),
+				'label' => esc_html__( 'Width', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'range' => [
@@ -280,7 +280,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
         $this->add_control(
 			'wpt_coverflow_item_image',
 			[
-				'label' => esc_html__( 'Image Style', 'textdomain' ),
+				'label' => esc_html__( 'Image Style', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -289,7 +289,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
         $this->add_responsive_control(
 			'wpt_coverflow_image_width',
 			[
-				'label' => esc_html__( 'Width', 'textdomain' ),
+				'label' => esc_html__( 'Width', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'range' => [
@@ -316,7 +316,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
         $this->add_responsive_control(
 			'wpt_coverflow_image_height',
 			[
-				'label' => esc_html__( 'Height', 'textdomain' ),
+				'label' => esc_html__( 'Height', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'range' => [
@@ -343,7 +343,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		$this->add_control(
 			'wpt_coverflow_item_content',
 			[
-				'label' => esc_html__( 'Content Wrapper', 'textdomain' ),
+				'label' => esc_html__( 'Content Wrapper', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -361,7 +361,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'wpt_coverflow_content_margin',
 			[
-				'label' => esc_html__( 'Margin Top', 'textdomain' ),
+				'label' => esc_html__( 'Margin Top', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'range' => [
@@ -388,7 +388,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		$this->add_control(
 			'wpt_coverflow_content_radius',
 			[
-				'label' => esc_html__( 'Border Radius', 'textdomain' ),
+				'label' => esc_html__( 'Border Radius', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'default' => [
@@ -408,7 +408,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'wpt_coverflow_content_padding',
 			[
-				'label' => esc_html__( 'Padding', 'textdomain' ),
+				'label' => esc_html__( 'Padding', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'default' => [
@@ -428,7 +428,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		$this->add_control(
 			'wpt_coverflow_item_content_title',
 			[
-				'label' => esc_html__( 'Title Style', 'textdomain' ),
+				'label' => esc_html__( 'Title Style', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -445,7 +445,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		$this->add_control(
 			'wpt_coverflow_title_color',
 			[
-				'label' => esc_html__( 'Color', 'textdomain' ),
+				'label' => esc_html__( 'Color', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .swiper.wpt-coverflow .swiper-slide .content h3' => 'color: {{VALUE}}',
@@ -456,7 +456,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'wpt_coverflow_title_margin',
 			[
-				'label' => esc_html__( 'Specing', 'textdomain' ),
+				'label' => esc_html__( 'Specing', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'default' => [
@@ -476,7 +476,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		$this->add_control(
 			'wpt_coverflow_item_content_text',
 			[
-				'label' => esc_html__( 'Text Style', 'textdomain' ),
+				'label' => esc_html__( 'Text Style', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -493,7 +493,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		$this->add_control(
 			'wpt_coverflow_text_color',
 			[
-				'label' => esc_html__( 'Color', 'textdomain' ),
+				'label' => esc_html__( 'Color', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .swiper.wpt-coverflow .swiper-slide .content p' => 'color: {{VALUE}}',
@@ -504,7 +504,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'wpt_coverflow_text_margin',
 			[
-				'label' => esc_html__( 'Specing', 'textdomain' ),
+				'label' => esc_html__( 'Specing', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'default' => [
@@ -535,7 +535,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'wpt_coverflow_nav_width',
 			[
-				'label' => esc_html__( 'Width', 'textdomain' ),
+				'label' => esc_html__( 'Width', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'range' => [
@@ -563,7 +563,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'wpt_coverflow_nav_height',
 			[
-				'label' => esc_html__( 'Height', 'textdomain' ),
+				'label' => esc_html__( 'Height', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'range' => [
@@ -592,7 +592,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'wpt_coverflow_nav_icon_size',
 			[
-				'label' => esc_html__( 'Icon Size', 'textdomain' ),
+				'label' => esc_html__( 'Icon Size', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'range' => [
@@ -624,7 +624,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		$this->start_controls_tab(
 			'wpt_coverflow_nav_normal_tab',
 			[
-				'label' => esc_html__( 'Normal', 'textdomain' ),
+				'label' => esc_html__( 'Normal', 'wpt-addon' ),
 			]
 		);
 
@@ -632,7 +632,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		$this->add_control(
 			'wpt_coverflow_nav_normal_color',
 			[
-				'label' => esc_html__( 'Icon Color', 'textdomain' ),
+				'label' => esc_html__( 'Icon Color', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .swiper.wpt-coverflow .wp-slide-nav .swiper-button-next svg path, .swiper.wpt-coverflow .wp-slide-nav .swiper-button-prev svg path' => 'fill: {{VALUE}}',
@@ -664,7 +664,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		$this->start_controls_tab(
 			'wpt_coverflow_nav_hover_tab',
 			[
-				'label' => esc_html__( 'Hover', 'textdomain' ),
+				'label' => esc_html__( 'Hover', 'wpt-addon' ),
 			]
 		);
 
@@ -672,7 +672,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		$this->add_control(
 			'wpt_coverflow_nav_hover_color',
 			[
-				'label' => esc_html__( 'Icon Color', 'textdomain' ),
+				'label' => esc_html__( 'Icon Color', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .swiper.wpt-coverflow .wp-slide-nav .swiper-button-next:hover svg path, .swiper.wpt-coverflow .wp-slide-nav .swiper-button-prev:hover svg path' => 'fill: {{VALUE}}',
@@ -694,7 +694,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		$this->add_control(
 			'wpt_coverflow_nav_hover_border',
 			[
-				'label' => esc_html__( 'Border Color', 'textdomain' ),
+				'label' => esc_html__( 'Border Color', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .swiper.wpt-coverflow .wp-slide-nav .swiper-button-next:hover, .swiper.wpt-coverflow .wp-slide-nav .swiper-button-prev:hover' => 'border-color: {{VALUE}}',
@@ -710,7 +710,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 		$this->add_control(
 			'wpt_coverflow_nav_radius',
 			[
-				'label' => esc_html__( 'Border Radius', 'textdomain' ),
+				'label' => esc_html__( 'Border Radius', 'wpt-addon' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'default' => [

@@ -80,7 +80,7 @@
   width: 48px;
   height: 48px;
 }
-.wpt-accordion-header h3 {
+.wpt-accordion-header .wpt-accr-iocn-list .wpt-accr-icon-title h3 {
   margin: 0;
   color: #09284f;
   font-family: "Mulish", sans-serif;
@@ -111,9 +111,10 @@
   position: relative;
 }
 .wpt-accordion-content .wpt-accr-img img {
-  transform: rotate(-8deg);
+  /* transform: rotate(-6.694deg); */
   position: absolute;
   top: -80px;
+  right: 80px;
   width: 350px;
 }
 
