@@ -135,6 +135,12 @@
 .show-content {
   display: block;
 }
+.wpt-vert-wrap .swiper {
+  height: 450px;
+}
+.wpt-vert-wrap .swiper-slide {
+  height: 150px !important;
+}
 
 @media (max-width: 768px) {
   .wpt-accordion-content .wpt-accr-img img {
@@ -151,5 +157,9 @@
   }
   .wpt-accordion-content .wpt-accr-img {
     width: 100%;
+  }
+  div#gt_float_wrapper {
+    top: 157px;
+    right: 185px;
   }
 }

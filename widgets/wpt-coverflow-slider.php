@@ -67,6 +67,22 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
 			]
 		);
 
+		$repeater->add_control(
+			'wpt_coverflow_link',
+			[
+				'label' => esc_html__( 'Link', 'wpt-addon' ),
+				'type' => \Elementor\Controls_Manager::URL,
+				'options' => [ 'url', 'is_external', 'nofollow' ],
+				'default' => [
+					'url' => '',
+					'is_external' => true,
+					'nofollow' => true,
+					// 'custom_attributes' => '',
+				],
+				'label_block' => true,
+			]
+		);
+
         $this->add_control(
 			'wpt_coverflow_list',
 			[
@@ -748,8 +764,10 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
                                 <div class="wpt-img" style="background: url(<?php echo esc_url( $item[ 'wpt_coverflow_image' ][ 'url' ] ); ?>) no-repeat;">
                                 </div>
                                 <div class="content">
-                                    <h3><?php echo $item[ 'wpt_coverflow_title' ]; ?></h3>
-                                    <p><?php echo $item[ 'wpt_coverflow_content' ]; ?></p>
+									<a href="<?php $item[ 'wpt_coverflow_link' ][ 'url' ]; ?>">
+										<h3><?php echo $item[ 'wpt_coverflow_title' ]; ?></h3>
+										<p><?php echo $item[ 'wpt_coverflow_content' ]; ?></p>
+									</a>
                                 </div>
                             </div>
                         <?php endforeach; ?>
