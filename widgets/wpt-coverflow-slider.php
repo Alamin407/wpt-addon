@@ -764,7 +764,7 @@ class Wpt_CoverFlow_Slider extends Widget_Base {
                                 <div class="wpt-img" style="background: url(<?php echo esc_url( $item[ 'wpt_coverflow_image' ][ 'url' ] ); ?>) no-repeat;">
                                 </div>
                                 <div class="content">
-									<a href="<?php $item[ 'wpt_coverflow_link' ][ 'url' ]; ?>">
+									<a href="<?php echo $item[ 'wpt_coverflow_link' ][ 'url' ]; ?>">
 										<h3><?php echo $item[ 'wpt_coverflow_title' ]; ?></h3>
 										<p><?php echo $item[ 'wpt_coverflow_content' ]; ?></p>
 									</a>
