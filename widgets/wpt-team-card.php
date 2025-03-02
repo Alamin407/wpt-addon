@@ -80,7 +80,7 @@ class Wpt_Team_Card extends Widget_Base {
 
         ?>
             <?php if($query->have_posts()) : ?>
-                <div class="speaker-grid">
+                <div id="speaker-grid" class="speaker-grid">
                     <?php while($query->have_posts() ) : 
                         $query->the_post();
                         $speaker_id    = get_the_ID();
@@ -106,6 +106,7 @@ class Wpt_Team_Card extends Widget_Base {
                         'type'      => 'list',
                         'prev_text' => '<i class="fa-solid fa-arrow-left"></i> <span>Previous</span>',
                         'next_text' => '<span>Next</span><i class="fa-solid fa-arrow-right"></i>',
+                        'add_fragment'=> '#speaker-grid'
                     ) );
 
                     if ( $pagination ) {
