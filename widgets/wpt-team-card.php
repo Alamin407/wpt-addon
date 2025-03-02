@@ -36,7 +36,7 @@ class Wpt_Team_Card extends Widget_Base {
         );
 
         $this->add_control(
-			'wpt_speak_title',
+			'wpt_speak_post_per_page',
 			[
 				'label' => esc_html__( 'Post Per Page', 'textdomain' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
@@ -67,10 +67,13 @@ class Wpt_Team_Card extends Widget_Base {
     protected function render() {
         $settings = $this->get_settings_for_display();
 
+        $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+
         // Query for speaker posts.
         $args  = [
             'post_type'      => 'speaker',
-            'posts_per_page' => 2,
+            'posts_per_page' => $settings[ 'wpt_speak_post_per_page' ],
+            'paged' => $paged,
         ];
         $query = new WP_Query( $args );
 
@@ -91,7 +94,22 @@ class Wpt_Team_Card extends Widget_Base {
                         </div>
                     <?php endwhile; ?>
                 </div>
-                <?php wp_reset_postdata(); ?>
+                <?php 
+                    // Pagination.
+                    $big = 999999999; // need an unlikely integer
+                    $pagination = paginate_links( array(
+                        'base'    => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                        'format'  => '?paged=%#%',
+                        'current' => max( 1, $paged ),
+                        'total'   => $query->max_num_pages,
+                        'type'    => 'list',
+                    ) );
+
+                    if ( $pagination ) {
+                        echo '<div class="speaker-pagination">' . $pagination . '</div>';
+                    }
+                    wp_reset_postdata(); 
+                ?>
             <?php endif; ?>
             <div id="speaker-popup" style="display:none;">
                 <div class="speak-popup-wrap">
