@@ -103,6 +103,8 @@ class Wpt_Team_Card extends Widget_Base {
                         'current' => max( 1, $paged ),
                         'total'   => $query->max_num_pages,
                         'type'    => 'list',
+                        'prev_text' => '<i class="fa-solid fa-arrow-left"></i> <span>Previous</span>',
+                        'next_text' => '<span>Next</span><i class="fa-solid fa-arrow-right"></i>',
                     ) );
 
                     if ( $pagination ) {
@@ -114,7 +116,7 @@ class Wpt_Team_Card extends Widget_Base {
             <div id="speaker-popup" style="display:none;">
                 <div class="speak-popup-wrap">
                     <div class="popup-content">
-                        <span class="close-popup">&times;</span>
+                        <span class="close-popup"><i class="fa-solid fa-xmark"></i></span>
                         <div id="speaker-details"></div>
                     </div>
                 </div>

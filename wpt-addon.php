@@ -211,7 +211,9 @@ final class Wpt_Addon {
                         <?php if ( $speaker_image ) : ?>
                             <img src="<?php echo esc_url( $speaker_image['url'] ); ?>" class="speakprof" alt="<?php echo esc_attr( $speaker_image['alt'] ); ?>">
                         <?php endif; ?>
-                        <img src="<?php echo esc_url( $speaker_logo['url'] ); ?>" class="speak-logo" alt="<?php echo esc_attr( $speaker_image['alt'] ); ?>">
+                        <?php if($speaker_logo) : ?>
+                            <img src="<?php echo esc_url( $speaker_logo['url'] ); ?>" class="speak-logo" alt="<?php echo esc_attr( $speaker_image['alt'] ); ?>">
+                        <?php endif; ?>
                     </div>
                     <div class="speaker-description">
                         <?php echo wp_kses_post( $description ); ?>
