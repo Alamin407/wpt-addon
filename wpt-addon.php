@@ -46,6 +46,10 @@ final class Wpt_Addon {
         add_action( 'wp_enqueue_scripts', [ $this, 'scripts_styles' ] );
         add_action( 'init', [ $this, 'i18n' ] );
         add_action( 'plugins_loaded', [ $this, 'init' ] );
+
+        // Ajax Query
+        add_action( 'wp_ajax_load_speaker_details', [ $this, 'load_speaker_details' ] );
+        add_action( 'wp_ajax_nopriv_load_speaker_details', [ $this, 'load_speaker_details' ] );
     }
 
     /**
@@ -79,6 +83,10 @@ final class Wpt_Addon {
         // Enqueue Scripts
         wp_enqueue_script( 'wpt-swipper-bundle-js' );
         wp_enqueue_script( 'wpt-main-js' );
+
+        wp_localize_script( 'wpt-main-js', 'speakerGrid', [
+            'ajax_url' => admin_url( 'admin-ajax.php' ),
+        ] );
     }
 
     /**
@@ -119,6 +127,7 @@ final class Wpt_Addon {
     public function init_widgets() {
         require_once WPT_PLUGIN_PATH . '/widgets/wpt-coverflow-slider.php';
         require_once WPT_PLUGIN_PATH . '/widgets/wpt-accordion.php';
+        require_once WPT_PLUGIN_PATH . '/widgets/wpt-team-card.php';
     }
 
     /**
@@ -180,6 +189,41 @@ final class Wpt_Addon {
         );
 
         printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+    }
+
+    // Ajax Query
+    public function load_speaker_details(){
+        $speaker_id = isset( $_POST['speaker_id'] ) ? intval( $_POST['speaker_id'] ) : 0;
+        if ( $speaker_id ) {
+            $speaker_name  = get_field( 'speaker_name', $speaker_id );
+            $description   = get_field( 'description', $speaker_id );
+            $speaker_image = get_field( 'speaker_image', $speaker_id );
+            $speaker_logo = get_field( 'speaker_logo', $speaker_id );
+
+            ob_start();
+            ?>
+            <div class="speaker-detail">
+                <div class="wpt-head">
+                    <h2><?php echo esc_html( $speaker_name ); ?></h2>
+                </div>
+                <div class="wpt-row">
+                    <div class="speak-img">
+                        <?php if ( $speaker_image ) : ?>
+                            <img src="<?php echo esc_url( $speaker_image['url'] ); ?>" class="speakprof" alt="<?php echo esc_attr( $speaker_image['alt'] ); ?>">
+                        <?php endif; ?>
+                        <img src="<?php echo esc_url( $speaker_logo['url'] ); ?>" class="speak-logo" alt="<?php echo esc_attr( $speaker_image['alt'] ); ?>">
+                    </div>
+                    <div class="speaker-description">
+                        <?php echo wp_kses_post( $description ); ?>
+                    </div>
+                </div>
+            </div>
+            <?php
+            $content = ob_get_clean();
+            wp_send_json_success( $content );
+        } else {
+            wp_send_json_error( __( 'Speaker not found', 'text-domain' ) );
+        }
     }
 
 }
