@@ -67,7 +67,8 @@ class Wpt_Team_Card extends Widget_Base {
     protected function render() {
         $settings = $this->get_settings_for_display();
 
-        $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+        // Get the current page number from 'paged' or 'page' query variables.
+        $paged = max( 1, get_query_var('paged'), get_query_var('page') );
 
         // Query for speaker posts.
         $args  = [
@@ -94,15 +95,15 @@ class Wpt_Team_Card extends Widget_Base {
                         </div>
                     <?php endwhile; ?>
                 </div>
-                <?php 
-                    // Pagination.
-                    $big = 999999999; // need an unlikely integer
+                <?php
+                    // Pagination with custom icon HTML for previous and next buttons.
+                    $big = 999999999; // an unlikely integer
                     $pagination = paginate_links( array(
-                        'base'    => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-                        'format'  => '?paged=%#%',
-                        'current' => max( 1, $paged ),
-                        'total'   => $query->max_num_pages,
-                        'type'    => 'list',
+                        'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                        'format'    => '?paged=%#%',
+                        'current'   => $paged,
+                        'total'     => $query->max_num_pages,
+                        'type'      => 'list',
                         'prev_text' => '<i class="fa-solid fa-arrow-left"></i> <span>Previous</span>',
                         'next_text' => '<span>Next</span><i class="fa-solid fa-arrow-right"></i>',
                     ) );
