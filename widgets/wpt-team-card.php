@@ -91,7 +91,7 @@ class Wpt_Team_Card extends Widget_Base {
                             <?php if ( $speaker_image ) : ?>
                                 <div class="speaker-img" style="background: url(<?php echo esc_url($speaker_image['url'] ); ?>)">
                                     <div class="speak-read-overlay">
-                                        <h4>Read More</h4>
+                                        <h4>View Profile</h4>
                                     </div>
                                 </div>
                             <?php endif; ?>

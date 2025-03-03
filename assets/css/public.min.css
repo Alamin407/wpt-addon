@@ -152,7 +152,7 @@
 .speaker-item {
   cursor: pointer;
   text-align: center;
-  width: calc(25% - 30px);
+  width: calc(20% - 30px);
 }
 .speaker-item .speaker-img {
   border-radius: 45%;
