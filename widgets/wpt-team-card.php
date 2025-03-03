@@ -89,7 +89,11 @@ class Wpt_Team_Card extends Widget_Base {
                     ?>
                         <div class="speaker-item" data-speaker-id="<?php echo esc_attr( $speaker_id ); ?>">
                             <?php if ( $speaker_image ) : ?>
-                                <div class="speaker-img" style="background: url(<?php echo esc_url($speaker_image['url'] ); ?>)"></div>
+                                <div class="speaker-img" style="background: url(<?php echo esc_url($speaker_image['url'] ); ?>)">
+                                    <div class="speak-read-overlay">
+                                        <h4>Read More</h4>
+                                    </div>
+                                </div>
                             <?php endif; ?>
                             <h3><?php echo esc_html( $speaker_name ); ?></h3>
                         </div>

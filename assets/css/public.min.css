@@ -152,13 +152,37 @@
 .speaker-item {
   cursor: pointer;
   text-align: center;
-  width: calc(33.33% - 30px);
+  width: calc(25% - 30px);
 }
 .speaker-item .speaker-img {
   border-radius: 45%;
   height: 300px;
   background-repeat: no-repeat !important;
   background-size: cover !important;
+  background-position: center !important;
+  position: relative;
+}
+.speaker-item .speak-read-overlay{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 95%;
+  height: 95%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 45%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  visibility: hidden;
+  transition: .4s ease-in-out;
+}
+.speaker-item .speak-read-overlay h4{
+  color: #fff;
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 500;
 }
 .speaker-item h3 {
   color: #262626;
@@ -166,6 +190,11 @@
   font-size: 28px;
   font-weight: 500;
   margin-top: 15px;
+}
+.speaker-item:hover .speak-read-overlay{
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Popup styling */
@@ -328,6 +357,9 @@
     height: 250px;
     background-position: center;
   }
+  .speaker-item {
+    width: calc(50% - 30px);
+  }
 }
 
 @media (max-width: 576px) {
@@ -373,6 +405,10 @@
   .speak-popup-wrap {
     align-items: flex-start;
     margin-top: 110px;
+  }
+  .speaker-grid{
+    row-gap: 30px;
+    column-gap: 0px;
   }
   .speaker-item {
     width: 100%;
