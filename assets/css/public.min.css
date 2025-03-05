@@ -279,6 +279,8 @@
 }
 .speaker-detail .speaker-description {
   width: 70%;
+  height: 425px;
+  overflow: auto;
 }
 .speaker-detail .speak-img img {
   width: 100%;
@@ -287,9 +289,6 @@
 }
 .speaker-detail .speak-img .speak-logo {
   width: 150px;
-}
-.speaker-detail .speaker-description{
-  height: 425px;
 }
 .speaker-detail .speaker-description p {
   color: #292d32;
