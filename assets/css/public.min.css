@@ -288,6 +288,9 @@
 .speaker-detail .speak-img .speak-logo {
   width: 150px;
 }
+.speaker-detail .speaker-description{
+  height: 425px;
+}
 .speaker-detail .speaker-description p {
   color: #292d32;
   text-align: justify;
@@ -352,6 +355,8 @@
   }
   .popup-content {
     width: 95%;
+    height: 560px;
+    overflow: auto;
   }
   .speaker-item .speaker-img {
     height: 250px;
@@ -401,6 +406,7 @@
   }
   .speaker-detail .speaker-description {
     width: 100%;
+    height: auto;
   }
   .speak-popup-wrap {
     align-items: flex-start;
