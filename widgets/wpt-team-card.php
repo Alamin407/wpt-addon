@@ -64,7 +64,7 @@ class Wpt_Team_Card extends Widget_Base {
             [
                 'label'   => __( 'Grid Columns', 'text-domain' ),
                 'type'    => \Elementor\Controls_Manager::SELECT,
-                'default' => '3',
+                'default' => '5',
                 'options' => [
                     '1' => __( '1 Column', 'text-domain' ),
                     '2' => __( '2 Columns', 'text-domain' ),
@@ -73,10 +73,6 @@ class Wpt_Team_Card extends Widget_Base {
                     '5' => __( '5 Columns', 'text-domain' ),
                     '6' => __( '6 Columns', 'text-domain' ),
                 ],
-                // 'selectors' => [
-                //     // The flex basis will adjust each .speaker-item's width.
-                //     '{{WRAPPER}} .speaker-item' => 'flex: 0 0 calc(100% / {{VALUE}});',
-                // ],
             ]
         );
 
@@ -95,11 +91,8 @@ class Wpt_Team_Card extends Widget_Base {
                 ],
                 'default' => [
                     'unit' => 'px',
-                    'size' => 20,
+                    'size' => 30,
                 ],
-                // 'selectors' => [
-                //     '{{WRAPPER}} .speaker-grid' => 'gap: {{SIZE}}{{UNIT}};',
-                // ],
             ]
         );
 

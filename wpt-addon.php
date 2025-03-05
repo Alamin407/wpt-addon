@@ -3,7 +3,7 @@
  * Plugin Name: Wpt Addon
  * Plugin URI: https://wpthinkers.com
  * Description: W-Pro Themes addon for elementor. This plugin develop by MD AL AMIN ISLAM. You can add extra functionality using this plugin.
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Md. Al-Amin Islam
  * Author URI: https://wpthinkers.com
  * Text Domain: wpt-addon
@@ -47,9 +47,13 @@ final class Wpt_Addon {
         add_action( 'init', [ $this, 'i18n' ] );
         add_action( 'plugins_loaded', [ $this, 'init' ] );
 
-        // Ajax Query
+        // Team Ajax Query
         add_action( 'wp_ajax_load_speaker_details', [ $this, 'load_speaker_details' ] );
         add_action( 'wp_ajax_nopriv_load_speaker_details', [ $this, 'load_speaker_details' ] );
+
+        // Package Tab Ajax Query
+        add_action( 'wp_ajax_load_package_tabs', [ $this, 'load_package_tabs_callback' ] );
+        add_action( 'wp_ajax_nopriv_load_package_tabs', [ $this, 'load_package_tabs_callback' ] );
     }
 
     /**
@@ -85,6 +89,10 @@ final class Wpt_Addon {
         wp_enqueue_script( 'wpt-main-js' );
 
         wp_localize_script( 'wpt-main-js', 'speakerGrid', [
+            'ajax_url' => admin_url( 'admin-ajax.php' ),
+        ] );
+
+        wp_localize_script( 'wpt-main-js', 'packageTabObj', [
             'ajax_url' => admin_url( 'admin-ajax.php' ),
         ] );
     }
@@ -128,6 +136,7 @@ final class Wpt_Addon {
         require_once WPT_PLUGIN_PATH . '/widgets/wpt-coverflow-slider.php';
         require_once WPT_PLUGIN_PATH . '/widgets/wpt-accordion.php';
         require_once WPT_PLUGIN_PATH . '/widgets/wpt-team-card.php';
+        require_once WPT_PLUGIN_PATH . '/widgets/wpt-package-tab.php';
     }
 
     /**
@@ -226,6 +235,65 @@ final class Wpt_Addon {
         } else {
             wp_send_json_error( __( 'Speaker not found', 'text-domain' ) );
         }
+    }
+
+    public function load_package_tabs_callback(){
+        // Base query arguments
+        $args = array(
+            'post_type'      => 'package',
+            'posts_per_page' => -1,
+            'order'  => 'ASC',
+        );
+
+        // Check if a package type is provided
+        if ( ! empty( $_POST['package_type'] ) ) {
+            $args['tax_query'] = array(
+                array(
+                    'taxonomy' => 'package-type',
+                    'field'    => 'slug',
+                    'terms'    => sanitize_text_field( $_POST['package_type'] ),
+                ),
+            );
+        }
+
+        $query = new WP_Query( $args );
+        
+        $tabs = '';
+        $content = '';
+
+        if ( $query->have_posts() ) {
+            while ( $query->have_posts() ) {
+                $query->the_post();
+                
+                // Get custom fields
+                $package_name    = get_post_meta( get_the_ID(), 'package_name', true );
+                $price           = get_post_meta( get_the_ID(), 'price', true );
+                $package_details = get_post_meta( get_the_ID(), 'package_details', true );
+                $button_title = get_post_meta( get_the_ID(), 'button_title', true );
+                $button_url = get_post_meta( get_the_ID(), 'button_url', true );
+
+                // Build the tab item
+                $tabs .= '<div class="wpt-tab-item" data-package="' . get_the_ID() . '">';
+                $tabs .= '<h3>' . esc_html( $package_name ) . '</h3>';
+                $tabs .= '<h4>' . esc_html( $price ) . '</h4>';
+                $tabs .= '<a href="' . esc_url( $button_url ) . '" class="wpt-btn">' . esc_html($button_title) . '</a>';
+                $tabs .= '</div>';
+
+                // Build the content item; hide by default
+                $content .= '<div class="wpt-package-content-item" id="package-' . get_the_ID() . '" style="display:none;">';
+                $content .= '<div class="wpt-content-head">';
+                $content .= '<h3>' . get_the_title() . '</h3>';
+                $content .= '</div>';
+                $content .= wp_kses_post( $package_details );
+                $content .= '</div>';
+            }
+            wp_reset_postdata();
+        }
+
+        wp_send_json_success( array(
+            'tabs'    => $tabs,
+            'content' => $content,
+        ) );
     }
 
 }
