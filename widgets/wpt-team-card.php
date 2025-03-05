@@ -45,6 +45,64 @@ class Wpt_Team_Card extends Widget_Base {
 			]
 		);
 
+        // Pagination
+        $this->add_control(
+			'show_wpt_speak_pagination',
+			[
+				'label' => esc_html__( 'Show Pagination', 'textdomain' ),
+				'type' => \Elementor\Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Show', 'textdomain' ),
+				'label_off' => esc_html__( 'Hide', 'textdomain' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+			]
+		);
+
+        // Responsive Grid Columns Control.
+        $this->add_responsive_control(
+            'grid_columns',
+            [
+                'label'   => __( 'Grid Columns', 'text-domain' ),
+                'type'    => \Elementor\Controls_Manager::SELECT,
+                'default' => '3',
+                'options' => [
+                    '1' => __( '1 Column', 'text-domain' ),
+                    '2' => __( '2 Columns', 'text-domain' ),
+                    '3' => __( '3 Columns', 'text-domain' ),
+                    '4' => __( '4 Columns', 'text-domain' ),
+                    '5' => __( '5 Columns', 'text-domain' ),
+                    '6' => __( '6 Columns', 'text-domain' ),
+                ],
+                // 'selectors' => [
+                //     // The flex basis will adjust each .speaker-item's width.
+                //     '{{WRAPPER}} .speaker-item' => 'flex: 0 0 calc(100% / {{VALUE}});',
+                // ],
+            ]
+        );
+
+        // Responsive Grid Gap Control.
+        $this->add_responsive_control(
+            'grid_gap',
+            [
+                'label' => __( 'Grid Gap', 'text-domain' ),
+                'type' => \Elementor\Controls_Manager::SLIDER,
+                'size_units' => [ 'px', 'em', '%' ],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 20,
+                ],
+                // 'selectors' => [
+                //     '{{WRAPPER}} .speaker-grid' => 'gap: {{SIZE}}{{UNIT}};',
+                // ],
+            ]
+        );
+
         $this->end_controls_section();
 
         // Style section
@@ -55,7 +113,7 @@ class Wpt_Team_Card extends Widget_Base {
         $this->start_controls_section(
             'wpt_speak_grid_section',
             [
-                'label' => esc_html__( 'Post Grid Style', 'wpt-addon' ),
+                'label' => esc_html__( 'Team Style', 'wpt-addon' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -78,9 +136,35 @@ class Wpt_Team_Card extends Widget_Base {
         ];
         $query = new WP_Query( $args );
 
+        // Retrieve responsive grid columns settings.
+        $columns_desktop = $settings['grid_columns'];
+        $columns_tablet  = isset( $settings['grid_columns_tablet'] ) && ! empty( $settings['grid_columns_tablet'] ) ? $settings['grid_columns_tablet'] : $columns_desktop;
+        $columns_mobile  = isset( $settings['grid_columns_mobile'] ) && ! empty( $settings['grid_columns_mobile'] ) ? $settings['grid_columns_mobile'] : $columns_desktop;
+
+        // Retrieve responsive grid gap settings.
+        $gap_desktop = isset( $settings['grid_gap']['size'] ) ? $settings['grid_gap']['size'] . $settings['grid_gap']['unit'] : '20px';
+        $gap_tablet  = isset( $settings['grid_gap_tablet']['size'] ) ? $settings['grid_gap_tablet']['size'] . $settings['grid_gap_tablet']['unit'] : $gap_desktop;
+        $gap_mobile  = isset( $settings['grid_gap_mobile']['size'] ) ? $settings['grid_gap_mobile']['size'] . $settings['grid_gap_mobile']['unit'] : $gap_desktop;
+
         ?>
+            <style>
+                /* Tablet settings */
+                @media (max-width: 1024px) {
+                    #speaker-grid {
+                        --grid-columns-tablet: <?php echo esc_attr( $columns_tablet ); ?>;
+                        --grid-gap-tablet: <?php echo esc_attr( $gap_tablet ); ?>;
+                    }
+                }
+                /* Mobile settings */
+                @media (max-width: 768px) {
+                    #speaker-grid {
+                        --grid-columns-mobile: <?php echo esc_attr( $columns_mobile ); ?>;
+                        --grid-gap-mobile: <?php echo esc_attr( $gap_mobile ); ?>;
+                    }
+                }
+            </style>
             <?php if($query->have_posts()) : ?>
-                <div id="speaker-grid" class="speaker-grid">
+                <div id="speaker-grid" class="speaker-grid" style="--grid-columns: <?php echo esc_attr( $columns_desktop ); ?>; --grid-gap: <?php echo esc_attr( $gap_desktop ); ?>;">
                     <?php while($query->have_posts() ) : 
                         $query->the_post();
                         $speaker_id    = get_the_ID();
@@ -112,9 +196,10 @@ class Wpt_Team_Card extends Widget_Base {
                         'next_text' => '<span>Next</span><i class="fa-solid fa-arrow-right"></i>',
                         'add_fragment'=> '#speaker-grid'
                     ) );
-
-                    if ( $pagination ) {
-                        echo '<div class="speaker-pagination">' . $pagination . '</div>';
+                    if( $settings['show_wpt_speak_pagination'] == 'yes' ){
+                        if ( $pagination ) {
+                            echo '<div class="speaker-pagination">' . $pagination . '</div>';
+                        }
                     }
                     wp_reset_postdata(); 
                 ?>
