@@ -554,9 +554,15 @@ i.elementor-widget-empty-icon {
   }
 
   .wpt-package-tabs{
-    gap: 30px;
+    gap: 15px;
   }
-  .wpt-package-tabs .wpt-tab-item{
-    width: 100%;
+  .wpt-package-tabs .wpt-tab-item {
+    width: calc(50% - 8px);
+  }
+  .wpt-package-tabs .wpt-tab-item .wpt-btn{
+    padding: 13px 20px;
+  }
+  .wpt-package-tabs .wpt-tab-item h3{
+    font-size: 15px;
   }
 }
