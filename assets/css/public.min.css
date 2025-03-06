@@ -353,7 +353,7 @@ i.elementor-widget-empty-icon {
   color: #fff;
 }
 .wpt-package-wrap{
-  width: 100%;
+  width: 1140px;
   background: #fff;
 }
 .wpt-package-tabs{
@@ -490,6 +490,9 @@ i.elementor-widget-empty-icon {
   }
   .wpt-package-tabs .wpt-tab-item{
     width: calc(33.33% - 15px);
+  }
+  .wpt-package-wrap{
+    width: 100%;
   }
 }
 
