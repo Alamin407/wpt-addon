@@ -78,8 +78,9 @@ class Wpt_Package_Tab extends Widget_Base {
 
     protected function render() {
         $settings = $this->get_settings_for_display();
+        $instance_id = $this->get_id();
         ?>
-            <div class="wpt-package-wrap" data-package-type="<?php echo esc_attr( $settings['wpt_package_type'] ); ?>">
+            <div class="wpt-package-wrap" data-wpt-instance-id="<?php echo esc_attr( $instance_id ); ?>" data-package-type="<?php echo esc_attr( $settings['wpt_package_type'] ); ?>">
                 <div class="wpt-package-tabs"></div>
                 <div class="wpt-package-content"></div>
             </div>

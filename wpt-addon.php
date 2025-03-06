@@ -256,6 +256,10 @@ final class Wpt_Addon {
             );
         }
 
+        // Capture the widget instance ID
+        $wpt_instance_id = ! empty( $_POST['wpt_instance_id'] ) ? sanitize_text_field( $_POST['wpt_instance_id'] ) : '';
+        $id_suffix       = $wpt_instance_id ? '-' . $wpt_instance_id : '';
+
         $query = new WP_Query( $args );
         
         $tabs = '';
@@ -273,14 +277,14 @@ final class Wpt_Addon {
                 $button_url = get_post_meta( get_the_ID(), 'button_url', true );
 
                 // Build the tab item
-                $tabs .= '<div class="wpt-tab-item" data-package="' . get_the_ID() . '">';
+                $tabs .= '<div class="wpt-tab-item" data-package="' . get_the_ID() . $id_suffix . '">';
                 $tabs .= '<h3>' . esc_html( $package_name ) . '</h3>';
                 $tabs .= '<h4>' . esc_html( $price ) . '</h4>';
                 $tabs .= '<a href="' . esc_url( $button_url ) . '" class="wpt-btn" target="_blank">' . esc_html($button_title) . '</a>';
                 $tabs .= '</div>';
 
                 // Build the content item; hide by default
-                $content .= '<div class="wpt-package-content-item" id="package-' . get_the_ID() . '" style="display:none;">';
+                $content .= '<div class="wpt-package-content-item" id="package-' . get_the_ID() . $id_suffix . '" style="display:none;">';
                 $content .= '<div class="wpt-content-head">';
                 $content .= '<h3>' . get_the_title() . '</h3>';
                 $content .= '</div>';
