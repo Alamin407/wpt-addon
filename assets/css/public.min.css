@@ -402,17 +402,19 @@
 .wpt-package-tabs .wpt-tab-item h3{
   color: #18181B;
   font-family: 'Inter', sans-serif;
-  font-size: 19.787px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: 22.756px;
+  margin: 0 0 32px 0;
 }
 .wpt-package-tabs .wpt-tab-item h4{
   color: #18181B;
   font-family: 'Inter', sans-serif;
-  font-size: 30.781px;
+  font-size: 24px;
   font-weight: 600;
   line-height: 35.398px;
+  margin: 0 0 42px 0;
 }
 .wpt-package-content-item{
   width: 100%;
