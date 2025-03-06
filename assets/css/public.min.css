@@ -549,8 +549,11 @@ i.elementor-widget-empty-icon {
     flex: 0 0 calc((100% - ((var(--grid-columns-mobile) - 1) * var(--grid-gap-mobile))) / var(--grid-columns-mobile));
   }
   .speaker-item .speaker-img {
-    height: 350px;
+    height: 190px;
     background-position: default;
+  }
+  .speaker-item h3{
+    font-size: 20px;
   }
 
   .wpt-package-tabs{
