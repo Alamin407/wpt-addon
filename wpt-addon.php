@@ -276,7 +276,7 @@ final class Wpt_Addon {
                 $tabs .= '<div class="wpt-tab-item" data-package="' . get_the_ID() . '">';
                 $tabs .= '<h3>' . esc_html( $package_name ) . '</h3>';
                 $tabs .= '<h4>' . esc_html( $price ) . '</h4>';
-                $tabs .= '<a href="' . esc_url( $button_url ) . '" class="wpt-btn">' . esc_html($button_title) . '</a>';
+                $tabs .= '<a href="' . esc_url( $button_url ) . '" class="wpt-btn" target="_blank">' . esc_html($button_title) . '</a>';
                 $tabs .= '</div>';
 
                 // Build the content item; hide by default

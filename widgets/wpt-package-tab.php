@@ -19,7 +19,7 @@ class Wpt_Package_Tab extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-posts-grid';
+        return 'eicon-tabs';
     }
 
     public function get_categories() {
@@ -40,7 +40,7 @@ class Wpt_Package_Tab extends Widget_Base {
             'taxonomy'   => 'package-type',
             'hide_empty' => false,
         ) );
-        $wpt_options = [ '' => __( 'All', 'plugin-name' ) ];
+        $wpt_options = [ '' => __( 'All', 'wpt-addon' ) ];
         if ( ! is_wp_error( $wpt_package_types ) ) {
             foreach ( $wpt_package_types as $term ) {
                 $wpt_options[ $term->slug ] = $term->name;
@@ -50,10 +50,10 @@ class Wpt_Package_Tab extends Widget_Base {
         $this->add_control(
             'wpt_package_type',
             [
-                'label'   => __( 'Package Type', 'plugin-name' ),
+                'label'   => __( 'Package Type', 'wpt-addon' ),
                 'type'    => \Elementor\Controls_Manager::SELECT,
                 'options' => $wpt_options,
-                'default' => '',
+                'default' => 'All',
             ]
         );
 
@@ -78,15 +78,10 @@ class Wpt_Package_Tab extends Widget_Base {
 
     protected function render() {
         $settings = $this->get_settings_for_display();
-
         ?>
             <div class="wpt-package-wrap" data-package-type="<?php echo esc_attr( $settings['wpt_package_type'] ); ?>">
-                <div class="wpt-package-tabs">
-                    <!-- AJAX-loaded tab items will appear here -->
-                </div>
-                <div class="wpt-package-content">
-                    <!-- AJAX-loaded package details will appear here -->
-                </div>
+                <div class="wpt-package-tabs"></div>
+                <div class="wpt-package-content"></div>
             </div>
         <?php
     }
