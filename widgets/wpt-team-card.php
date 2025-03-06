@@ -111,6 +111,327 @@ class Wpt_Team_Card extends Widget_Base {
             ]
         );
 
+        $this->add_responsive_control(
+			'wpt_speak_grid_image_height',
+			[
+				'label' => esc_html__( 'Image Height', 'textdomain' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 1000,
+						'step' => 1,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 300,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .speaker-item .speaker-img' => 'height: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+        // Heading
+        $this->add_control(
+			'wpt_speak_grid_title',
+			[
+				'label' => esc_html__( 'Title', 'textdomain' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+        // Typography
+        $this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'wpt_speak_grid_title_typography',
+				'selector' => '{{WRAPPER}} .speaker-item h3',
+			]
+		);
+
+        // Color
+        $this->add_control(
+			'wpt_speak_grid_title_color',
+			[
+				'label' => esc_html__( 'Title Color', 'textdomain' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .speaker-item h3' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+        // Heading
+        $this->add_control(
+			'wpt_speak_grid_overlay',
+			[
+				'label' => esc_html__( 'Overlay Style', 'textdomain' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+        // Overlay Color
+        $this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name' => 'wpt_speak_grid_overlay_background',
+				'types' => [ 'classic', 'gradient', 'video' ],
+				'selector' => '{{WRAPPER}} .speaker-item .speak-read-overlay',
+			]
+		);
+
+        // Overlay Title
+        $this->add_control(
+			'wpt_speak_grid_ove_title',
+			[
+				'label' => esc_html__( 'Overlay Title', 'textdomain' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+        // Typography
+        $this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'wpt_speak_grid_ove_title_typography',
+				'selector' => '{{WRAPPER}} .speaker-item .speak-read-overlay h4',
+			]
+		);
+
+        // Color
+        $this->add_control(
+			'wpt_speak_grid_ove_title_color',
+			[
+				'label' => esc_html__( 'Title Color', 'textdomain' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .speaker-item .speak-read-overlay h4' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+        $this->end_controls_section();
+
+        $this->start_controls_section(
+            'wpt_speak_popup_section',
+            [
+                'label' => esc_html__( 'Popup Style', 'wpt-addon' ),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        // Popup Title
+        $this->add_control(
+			'wpt_speak_popup_wrap',
+			[
+				'label' => esc_html__( 'Wrapper', 'textdomain' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+        // Width
+        $this->add_responsive_control(
+			'wpt_speak_popup_wrap_width',
+			[
+				'label' => esc_html__( 'Width', 'textdomain' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 1000,
+						'step' => 1,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'unit' => '%',
+					'size' => 60,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .popup-content' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+        // Padding
+        $this->add_control(
+			'wpt_speak_popup_wrap_padding',
+			[
+				'label' => esc_html__( 'Padding', 'textdomain' ),
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'default' => [
+					'top' => 45,
+					'right' => 45,
+					'bottom' => 45,
+					'left' => 45,
+					'unit' => 'px',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .popup-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+        // Border
+        $this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name' => 'wpt_speak_popup_wrap_border',
+				'selector' => '{{WRAPPER}} .popup-content',
+			]
+        );
+
+        // Popup Title
+        $this->add_control(
+			'wpt_speak_popup_title',
+			[
+				'label' => esc_html__( 'Title', 'textdomain' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+        // Typography
+        $this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'wpt_speak_popup_title_typography',
+				'selector' => '{{WRAPPER}} .speaker-detail .wpt-head h2',
+			]
+		);
+
+        // Color
+        $this->add_control(
+			'wpt_speak_popup_title_color',
+			[
+				'label' => esc_html__( 'Title Color', 'textdomain' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .speaker-detail .wpt-head h2' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+        // Popup Title Devider
+        $this->add_control(
+			'wpt_speak_popup_devider',
+			[
+				'label' => esc_html__( 'Devider', 'textdomain' ),
+				'type' => \Elementor\Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+        // Devider Background
+        $this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name' => 'wpt_speak_popup_devider_background',
+				'types' => [ 'classic', 'gradient', 'video' ],
+				'selector' => '{{WRAPPER}} .speaker-detail .wpt-head h2::before',
+			]
+		);
+
+        // Devider Width
+        $this->add_responsive_control(
+			'wpt_speak_popup_devider_width',
+			[
+				'label' => esc_html__( 'Width', 'textdomain' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 1000,
+						'step' => 1,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'unit' => '%',
+					'size' => 20,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .speaker-detail .wpt-head h2::before' => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+        // Devider Height
+        $this->add_responsive_control(
+			'wpt_speak_popup_devider_height',
+			[
+				'label' => esc_html__( 'Height', 'textdomain' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 1000,
+						'step' => 1,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 5,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .speaker-detail .wpt-head h2::before' => 'height: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+        // Margin
+        $this->add_responsive_control(
+			'wpt_speak_popup_devider_margin',
+			[
+				'label' => esc_html__( 'Margin', 'textdomain' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 1000,
+						'step' => 1,
+					],
+					'%' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 40,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .speaker-detail .wpt-head' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
 
         $this->end_controls_section();
     }
