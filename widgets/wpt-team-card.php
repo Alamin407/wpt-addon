@@ -438,8 +438,7 @@ class Wpt_Team_Card extends Widget_Base {
 
     protected function render() {
         $settings = $this->get_settings_for_display();
-
-        // Get the current page number from 'paged' or 'page' query variables.
+		// Get the current page number from 'paged' or 'page' query variables.
         $paged = max( 1, get_query_var('paged'), get_query_var('page') );
 
         // Query for speaker posts.
