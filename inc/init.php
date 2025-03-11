@@ -35,11 +35,13 @@ final class Init {
         require_once WPT_PLUGIN_PATH . '/inc/Classes/Plugin_Loaded.php';
         require_once WPT_PLUGIN_PATH . '/inc/Classes/Speaker_Ajax.php';
         require_once WPT_PLUGIN_PATH . '/inc/Classes/Package_Ajax.php';
+        require_once WPT_PLUGIN_PATH . '/inc/Classes/Upload_Day_Ajax.php';
 
         new Wpt\Enqueue();
         new Wpt\Languages();
         new Wpt\Plugin_Loaded();
         new Wpt\Speaker_Ajax();
         new Wpt\Package_Ajax();
+        new Wpt\Upload_Day_Ajax();
     }
 }

@@ -20,6 +20,13 @@ class Enqueue{
         // Register Scripts
         wp_register_script( 'wpt-swipper-bundle-js', WPT_PLUGIN_URL . 'assets/js/swiper-bundle.min.js', [ 'jquery' ], rand(), true );
         wp_register_script( 'wpt-main-js', WPT_PLUGIN_URL . 'assets/js/public.min.js', [ 'wpt-swipper-bundle-js' ], rand(), true );
+        // wp_register_script(
+        //     'video-gallery-script',
+        //     WPT_PLUGIN_URL . 'assets/js/video-gallery.js',
+        //     array( 'wpt-main-js' ),
+        //     '1.0',
+        //     true
+        // );
 
         // Enqueue Styles
         wp_enqueue_style( 'wpt-fontawesome' );
@@ -29,6 +36,7 @@ class Enqueue{
         // Enqueue Scripts
         wp_enqueue_script( 'wpt-swipper-bundle-js' );
         wp_enqueue_script( 'wpt-main-js' );
+        // wp_enqueue_script( 'video-gallery-script' );
 
         wp_localize_script( 'wpt-main-js', 'speakerGrid', [
             'ajax_url' => admin_url( 'admin-ajax.php' ),

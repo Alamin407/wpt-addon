@@ -22,6 +22,7 @@ require_once WPT_PLUGIN_PATH . '/inc/Classes/Deactivate.php';
 
 register_deactivation_hook( 'Deactivate', 'deactivate' );
 
+
 require_once WPT_PLUGIN_PATH . '/inc/init.php';
 
 // Initialize the plugin

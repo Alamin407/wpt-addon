@@ -48,6 +48,7 @@ class Plugin_Loaded{
         require_once WPT_PLUGIN_PATH . '/widgets/wpt-accordion.php';
         require_once WPT_PLUGIN_PATH . '/widgets/wpt-team-card.php';
         require_once WPT_PLUGIN_PATH . '/widgets/wpt-package-tab.php';
+        require_once WPT_PLUGIN_PATH . '/widgets/wpt-video-gallery.php';
     }
 
     /**
